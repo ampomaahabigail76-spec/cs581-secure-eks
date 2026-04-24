@@ -1,0 +1,44 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: fintech-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+      containers:
+      - name: frontend
+        image: nginxinc/nginx-unprivileged:alpine
+        ports:
+        - containerPort: 8080
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+        resources:
+          limits:
+            cpu: "250m"
+            memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: fintech-app
+spec:
+  selector:
+    app: frontend
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer

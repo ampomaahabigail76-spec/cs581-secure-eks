@@ -1,0 +1,11 @@
+﻿apiVersion: v1
+kind: Pod
+metadata:
+  name: evil-pod
+  namespace: fintech-app
+spec:
+  containers:
+  - name: evil
+    image: alpine
+    securityContext:
+      privileged: true

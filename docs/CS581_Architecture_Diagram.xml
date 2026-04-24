@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- Title -->
+    <mxCell id="title" value="CS581 — Secure Cloud-Native Architecture on AWS EKS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#1F4E79;" vertex="1" parent="1">
+      <mxGeometry x="300" y="20" width="1054" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Internet Cloud -->
+    <mxCell id="internet" value="Internet / Users" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="627" y="80" width="200" height="100" as="geometry" />
+    </mxCell>
+
+    <!-- Arrow: Internet to IGW -->
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#1F4E79;strokeWidth=2;" edge="1" source="internet" target="igw" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e1label" value="HTTPS :443" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#1F4E79;" vertex="1" connectable="0" parent="e1">
+      <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+    </mxCell>
+
+    <!-- AWS Region Box -->
+    <mxCell id="awsregion" value="AWS Region: us-east-1" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#FF8C00;fillColor=#FFF3E0;verticalLabelPosition=top;verticalAlign=bottom;align=center;spacingTop=0;fontStyle=1;fontSize=12;fontColor=#FF8C00;dashed=1;strokeWidth=2;" vertex="1" parent="1">
+      <mxGeometry x="140" y="200" width="1174" height="860" as="geometry" />
+    </mxCell>
+
+    <!-- VPC Box -->
+    <mxCell id="vpc" value="VPC: 10.0.0.0/16&#xa;vpc-0faa3b0a6bab02d72" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc;strokeColor=#8F4FFF;fillColor=#F3F0FF;verticalLabelPosition=top;verticalAlign=bottom;align=center;spacingTop=0;fontStyle=1;fontSize=12;fontColor=#8F4FFF;dashed=1;strokeWidth=2;" vertex="1" parent="1">
+      <mxGeometry x="170" y="250" width="820" height="790" as="geometry" />
+    </mxCell>
+
+    <!-- Public Subnets Box -->
+    <mxCell id="pubsubnets" value="Public Subnets&#xa;10.0.1.0/24 | 10.0.2.0/24&#xa;(us-east-1a, us-east-1b)" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_subnet;strokeColor=#006400;fillColor=#D5E8D4;verticalLabelPosition=top;verticalAlign=bottom;align=left;spacingTop=0;fontStyle=1;fontSize=11;fontColor=#006400;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="190" y="290" width="780" height="230" as="geometry" />
+    </mxCell>
+
+    <!-- IGW -->
+    <mxCell id="igw" value="Internet Gateway&#xa;igw-0f8b4633f34bf35a5" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=#ffffff;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.internet_gateway;" vertex="1" parent="1">
+      <mxGeometry x="230" y="360" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="igwlabel" value="Internet Gateway" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="215" y="425" width="90" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- NAT Gateway -->
+    <mxCell id="nat" value="" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=#ffffff;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.nat_gateway;" vertex="1" parent="1">
+      <mxGeometry x="460" y="360" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="natlabel" value="NAT Gateway&#xa;nat-0be8973dbf2594539" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="430" y="425" width="120" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- Load Balancer -->
+    <mxCell id="alb" value="" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=#ffffff;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.application_load_balancer;" vertex="1" parent="1">
+      <mxGeometry x="700" y="360" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="alblabel" value="AWS Load Balancer&#xa;(External HTTPS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="670" y="425" width="120" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- Private Subnets Box -->
+    <mxCell id="privsubnets" value="Private Subnets&#xa;10.0.3.0/24 | 10.0.4.0/24&#xa;(Worker nodes — no direct internet access)" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_subnet;strokeColor=#006EAF;fillColor=#DAE8FC;verticalLabelPosition=top;verticalAlign=bottom;align=left;spacingTop=0;fontStyle=1;fontSize=11;fontColor=#006EAF;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="190" y="560" width="780" height="460" as="geometry" />
+    </mxCell>
+
+    <!-- EKS Worker Node Box -->
+    <mxCell id="eksnode" value="EKS Worker Node&#xa;t3.small | ip-10-0-3-172.ec2.internal&#xa;Kubernetes v1.30" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="210" y="610" width="740" height="390" as="geometry" />
+    </mxCell>
+
+    <!-- Frontend Pod -->
+    <mxCell id="frontend" value="Frontend Pod&#xa;nginxinc/nginx-unprivileged:alpine&#xa;Port: 8080&#xa;runAsUser: 101&#xa;allowPrivilegeEscalation: false&#xa;capabilities.drop: ALL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=0;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="240" y="670" width="300" height="130" as="geometry" />
+    </mxCell>
+
+    <!-- Backend Pod -->
+    <mxCell id="backend" value="Backend Pod&#xa;python:3.11-slim&#xa;Port: 3000&#xa;runAsUser: 1000&#xa;allowPrivilegeEscalation: false&#xa;Reads: db-secret (K8s Secret)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=0;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="600" y="670" width="300" height="130" as="geometry" />
+    </mxCell>
+
+    <!-- RBAC label inside node -->
+    <mxCell id="rbac" value="RBAC: app-reader Role (read-only)&#xa;Network Policy: default-deny-all + allow rules&#xa;Pod Security: Non-root | No privilege escalation | Drop ALL caps" style="text;html=1;strokeColor=#82b366;fillColor=#f0fff0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="240" y="840" width="660" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- K8s Secret -->
+    <mxCell id="k8ssecret" value="K8s Secret: db-secret (Opaque)&#xa;ConfigMap: app-config" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="240" y="920" width="300" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- Service Account -->
+    <mxCell id="sa" value="ServiceAccount: backend-sa&#xa;IRSA: BackendSecretsPolicy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="600" y="920" width="300" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- Arrows inside cluster -->
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#006EAF;strokeWidth=2;dashed=0;" edge="1" source="alb" target="frontend" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e2label" value="Port 80→8080" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="e2">
+      <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+    </mxCell>
+
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#006EAF;strokeWidth=2;dashed=1;" edge="1" source="frontend" target="backend" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e3label" value="ClusterIP :3000" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="e3">
+      <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+    </mxCell>
+
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;strokeWidth=1.5;dashed=1;" edge="1" source="eksnode" target="nat" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e4label" value="Egress only" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="e4">
+      <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+    </mxCell>
+
+    <!-- ============ AWS SERVICES PANEL (RIGHT) ============ -->
+
+    <!-- KMS -->
+    <mxCell id="kms" value="AWS KMS&#xa;alias/eks/cs581-secure-cluster&#xa;EKS Secret Encryption&#xa;Key rotation: enabled" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#FF8C00;fillColor=#FFF9C4;labelBackgroundColor=none;align=center;html=1;fontSize=10;fontStyle=0;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+      <mxGeometry x="1030" y="270" width="240" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- CloudWatch -->
+    <mxCell id="cw" value="CloudWatch Logs&#xa;/aws/eks/cs581-secure-cluster/cluster&#xa;api | audit | authenticator&#xa;controllerManager | scheduler" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#FF8C00;fillColor=#FFF9C4;labelBackgroundColor=none;align=center;html=1;fontSize=10;fontStyle=0;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+      <mxGeometry x="1030" y="380" width="240" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- Secrets Manager -->
+    <mxCell id="sm" value="AWS Secrets Manager&#xa;cs581/db-password&#xa;ARN: secretsmanager:us-east-1&#xa;:552823820626:secret:cs581/db-password" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#FF8C00;fillColor=#FFF9C4;labelBackgroundColor=none;align=center;html=1;fontSize=10;fontStyle=0;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+      <mxGeometry x="1030" y="490" width="240" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- IAM -->
+    <mxCell id="iam" value="AWS IAM&#xa;BackendSecretsPolicy&#xa;Least privilege: secretsmanager:GetSecretValue&#xa;IRSA via OIDC Provider" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#FF8C00;fillColor=#FFF9C4;labelBackgroundColor=none;align=center;html=1;fontSize=10;fontStyle=0;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+      <mxGeometry x="1030" y="600" width="240" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- GuardDuty -->
+    <mxCell id="gd" value="AWS GuardDuty&#xa;EKS Audit Log monitoring&#xa;Threat detection: unauthorized access,&#xa;privilege escalation, cryptomining" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#FF8C00;fillColor=#FFF9C4;labelBackgroundColor=none;align=center;html=1;fontSize=10;fontStyle=0;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+      <mxGeometry x="1030" y="710" width="240" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- ECR / Trivy -->
+    <mxCell id="ecr" value="Container Security&#xa;Trivy vulnerability scanning&#xa;nginx-unprivileged: 0 Critical/High&#xa;python:3.11-slim: 0 Critical, 3 High" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#FF8C00;fillColor=#FFF9C4;labelBackgroundColor=none;align=center;html=1;fontSize=10;fontStyle=0;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+      <mxGeometry x="1030" y="820" width="240" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- AWS Services Panel Label -->
+    <mxCell id="awspanel" value="AWS Security Services" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#FF8C00;" vertex="1" parent="1">
+      <mxGeometry x="1030" y="230" width="240" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- Arrows to AWS Services -->
+    <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FF8C00;strokeWidth=1.5;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="eksnode" target="kms" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e5label" value="Encrypt secrets" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#FF8C00;" vertex="1" connectable="0" parent="e5">
+      <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+    </mxCell>
+
+    <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FF8C00;strokeWidth=1.5;dashed=1;" edge="1" source="eksnode" target="cw" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e6label" value="Audit logs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#FF8C00;" vertex="1" connectable="0" parent="e6">
+      <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+    </mxCell>
+
+    <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FF8C00;strokeWidth=1.5;dashed=1;" edge="1" source="backend" target="sm" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e7label" value="GetSecretValue (IRSA)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#FF8C00;" vertex="1" connectable="0" parent="e7">
+      <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+    </mxCell>
+
+    <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#cc0000;strokeWidth=1.5;dashed=1;" edge="1" source="gd" target="eksnode" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e8label" value="Monitor EKS" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#cc0000;" vertex="1" connectable="0" parent="e8">
+      <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+    </mxCell>
+
+    <!-- Legend Box -->
+    <mxCell id="legend" value="Legend&#xa;━━ Direct traffic&#xa;┅┅ Security / Management&#xa;🟡 AWS managed services&#xa;🟢 Private (secure) zone&#xa;🔵 Public (DMZ) zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="1030" y="950" width="240" height="100" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>
