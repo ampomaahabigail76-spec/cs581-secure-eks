@@ -1,10 +1,10 @@
-﻿# CS581 Signature Project â€” Secure Cloud-Native Application on AWS EKS
+# CS581 Signature Project ??? Secure Cloud-Native Application on AWS EKS
 
-**Student:** Abigail Ampomaah | **Course:** CS581 â€“ Cloud Security | **Institution:** San Francisco Bay University | **Semester:** Spring 2026
+**Student:** Abigail Ampomaah | **Course:** CS581 ??? Cloud Security | **Institution:** San Francisco Bay University | **Semester:** Spring 2026
 
 ---
 
-## Project Status â€” All 9 Phases Complete
+## Project Status ??? All 9 Phases Complete
 
 | Phase | Description | Status |
 |---|---|---|
